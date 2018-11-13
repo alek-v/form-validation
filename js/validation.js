@@ -1,3 +1,7 @@
+/*
+(c) vavok.net
+*/
+
 var validateName = function(inputData) {
 
   if (inputData.target !== undefined) {
