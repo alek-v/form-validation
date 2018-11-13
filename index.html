@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Validation</title>
+	<script src="js/validation.js"></script>
+	<script type="text/javascript">
+		window.onload = function () {
+		    document.getElementById("contactName").addEventListener('keyup', validateName);
+		    document.getElementById("contactPhone").addEventListener('keyup', validatePhone);
+		    document.getElementById("contactEmail").addEventListener('keyup', validateEmail);
+		    document.getElementById("contactMessage").addEventListener('keyup', validateMessage);
+		    document.getElementById("form").addEventListener('submit', validateForm);
+		}
+
+		var inputs = {
+		    'name' : {
+		        'func' : 'validateName',
+		        'id' : 'contactName',
+	    		'valid' : formsLocalized.valid,
+	    		'error' : formsLocalized.namerequired
+		    },
+		    'phone' : {
+		        'func' : 'validatePhone',
+		        'id' : 'contactPhone',
+        		'valid' : formsLocalized.valid,
+        		'error' : 'Phone number is required'
+		    },
+		    'email' : {
+		        'func' : 'validateEmail',
+		        'id' : 'contactEmail',
+        		'valid' : formsLocalized.valid,
+        		'error' : formsLocalized.mailwrong
+		    },
+		    'message' : {
+		        'func' : 'validateMessage',
+		        'id' : 'contactMessage',
+        		'valid' : formsLocalized.valid,
+        		'error' : formsLocalized.msgshort
+		    }
+		};
+		var formData = {
+			'error' : formsLocalized.fixerrors
+		}
+    </script>
+</head>
+<body>
+
+<form id="form">
+
+    <div>
+      <label for="contact-name">Name</label>
+      <input type="text" id="contactName" name="name" placeholder="Enter your name">
+      <span class='error-message' id='name-error'></span>
+    </div>
+
+    <div>
+      <label for="contact-phone">Phone Number</label>
+      <input type="tel" id="contactPhone" name="phone" placeholder="Phone">
+      <span class='error-message' id='phone-error'></span>
+    </div>
+
+    <div>
+      <label for="contact-email">Email address</label>
+      <input type="email" id="contactEmail" name="email" placeholder="Enter Email">
+      <span class='error-message' id='email-error'></span>
+    </div>   
+
+    <div>
+      <label for='contactMessage'>Your Message</label>
+      <textarea rows="5" id='contactMessage' name='message' placeholder="Message..."></textarea>
+      <span class='error-message' id='message-error'></span>
+    </div>
+
+  <button id='submit' type="submit" class="btn btn-default">Submit</button>
+  <span class='error-message' id='submit-error'></span>
+
+</form>
+
+</body>
+</html>
