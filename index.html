@@ -2,7 +2,14 @@
 <html lang="en">
 <head>
 	<title>Validation</title>
-	<script src="js/validation.js"></script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="include/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="include/css/style.css" />
+
+	<script src="include/js/validation.js"></script>
 	<script type="text/javascript">
 		window.onload = function () {
 		    document.getElementById("contactName").addEventListener('keyup', validateName);
@@ -44,37 +51,44 @@
     </script>
 </head>
 <body>
+<div class="container">
+	<div class="row">
+		<div class="col-6 center">
 
-<form id="form">
+			<p><h1>Form validation</h1></p>
 
-    <div>
-      <label for="contact-name">Name</label>
-      <input type="text" id="contactName" name="name" placeholder="Enter your name">
-      <span class='error-message' id='name-error'></span>
-    </div>
+			<form id="form">
 
-    <div>
-      <label for="contact-phone">Phone Number</label>
-      <input type="tel" id="contactPhone" name="phone" placeholder="Phone">
-      <span class='error-message' id='phone-error'></span>
-    </div>
+			    <div class="form-group">
+			      <label for="contact-name">Name</label>
+			      <input type="text" class="form-control" id="contactName" name="name" placeholder="Enter your name">
+			      <span class='error-message' id='name-error'></span>
+			    </div>
 
-    <div>
-      <label for="contact-email">Email address</label>
-      <input type="email" id="contactEmail" name="email" placeholder="Enter Email">
-      <span class='error-message' id='email-error'></span>
-    </div>   
+			    <div class="form-group">
+			      <label for="contact-phone">Phone Number</label>
+			      <input type="text" class="form-control" id="contactPhone" name="phone" placeholder="Phone">
+			      <span class='error-message' id='phone-error'></span>
+			    </div>
 
-    <div>
-      <label for='contactMessage'>Your Message</label>
-      <textarea rows="5" id='contactMessage' name='message' placeholder="Message..."></textarea>
-      <span class='error-message' id='message-error'></span>
-    </div>
+			    <div class="form-group">
+			      <label for="contact-email">Email address</label>
+			      <input type="email" class="form-control" id="contactEmail" name="email" placeholder="Enter Email">
+			      <span class='error-message' id='email-error'></span>
+			    </div>   
 
-  <button id='submit' type="submit" class="btn btn-default">Submit</button>
-  <span class='error-message' id='submit-error'></span>
+			    <div class="form-group">
+			      <label for='contactMessage'>Your Message</label>
+			      <textarea rows="5" class="form-control" id='contactMessage' name='message' placeholder="Message..."></textarea>
+			      <span class='error-message' id='message-error'></span>
+			    </div>
 
-</form>
+			  <button id='submit' type="submit" class="btn btn-primary">Submit</button>
+			  <span class='error-message' id='submit-error'></span>
 
+			</form>
+		</div>
+	</div>
+</div>
 </body>
 </html>

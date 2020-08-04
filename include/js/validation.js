@@ -1,5 +1,7 @@
 /*
-(c) vavok.net
+* Author:    Aleksandar Vranešević
+* URI:       https://vavok.net
+* Updated:   04.08.2020. 21:40:09
 */
 
 var validateName = function(inputData) {
@@ -167,5 +169,7 @@ function loadLocalization(file) {
 }
 var loadLang = document.querySelector("html[lang]").lang;
 
-loadLocalization('../lang/' + loadLang + '/js/forms.js');
-//$("head").append('<script type="text/javascript" src="../lang/' + loadLang + '/js/forms.js"></script>'); // jQuery way
+if (loadLang == 'en') { loadLang = 'english'; }
+else if (loadLang == 'sr') { loadLang = 'serbian_cyrillic'; }
+
+loadLocalization('./include/lang/' + loadLang + '/form_validation.js');
